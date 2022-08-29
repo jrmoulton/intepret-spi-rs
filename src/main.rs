@@ -81,8 +81,8 @@ fn main() -> Result<()> {
         command.time = byte_chunk.get(0).unwrap().time;
         commands.push(command);
     }
-    let root =
-        plotters::backend::BitMapBackend::new("images/0.png", (2000, 400)).into_drawing_area();
+    let root = plotters::backend::BitMapBackend::new("images/rust_plot.png", (2000, 400))
+        .into_drawing_area();
     root.fill(&plotters::style::WHITE)?;
     let mut chart = plotters::chart::ChartBuilder::on(&root)
         .caption(
